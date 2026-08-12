@@ -1,59 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Prince Anthony</title>
-    <link rel="stylesheet" href="aboutme.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');</style>
-</head>
-<body>
-    <section class="home">
-    <nav>
-        <a href="index.html">Home</a>
-        <br></br>
-        <a href="aboutme.html" class="active">About Me</a>
-        <br></br>
-        <a href="skills.html">Skills</a>
-        <br></br>
-        <a href="projects.html">My Work</a>
-    </nav>
-    </section>
-    <section class="aboutme">
-    <div class="aboutme-content">
-        <div class="aboutme-text">
-            <h1>About Me:</h1>
-            <h2>Front-End Developer in Training</h2>
-            <p>I'm currently learning front-end development, starting with HTML and CSS. I'm focused on building responsive, user-friendly websites and gradually expanding my skills through hands-on projects.</p>
-        </div>
-        <br></br>
-    <div class="exp-content">
-        <div class="exp-text">
-            <h1>My experiences and how i can help you:</h1>
-            <div class="technician-row">
-                <div class="technician-images">
-                    <img src="img/repair.jpg" alt="Technician Exp" class="technician-img">
-                    <img src="img/repair2.png" alt="Technician Exp" class="technician-img">
-                </div>
-                <div class="technician-text">
-                    <h2>Mobile Phone Technician</h2>
-                    <p>I have worked as a Phone Technician for over 10 years, handling a wide range of mobile device repairs including water-damage repairs, component replacement, diagnostics and general hardware troubleshooting.
-                    The experience amplified my problem-solving skills, attention to detail, patience and the ability to troubleshoot technical issues methodically. I also learned to recognize when a problem required a specialized equipment or expertise beyond what i had available.
-                    I'm now applying the same problem-solving mindset to learning front-end development and building websites with HTML and CSS.
-                    </p>
-                </div>
-            </div>
-            <div class="welding-row">
-                <div class="welding-text">
-                    <h2>Welding Training</h2>
-                    <p>I completed practical welding training that developed my precision and ability to follow technical procedures specified.</p>
-                </div>
-                <img src="img/welding.jpg" alt="Welding training" class="welding-img">
-            </div>
-        </div>
-    </div>
-    </div>
-    </section>
-    <a href="index.html" class="btn">Back To Home</a>
-</body>
-</html>
+html {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: black;
+    background-image: url('img/circuit1.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 1rem;
+    gap: 1.2rem;
+    padding: 0.7rem 1.2rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+nav a{
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-align: right;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.active{
+    color: gold;
+    border-bottom: 3px solid gray;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    text-indent: 45px;
+    text-align: justify;
+}
+
+.technician-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.technician-text {
+    flex: 1;
+}
+
+.technician-images {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    flex-shrink: 0;
+}
+
+.technician-img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.welding-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.welding-text {
+    flex: 1;
+}
+
+.welding-img {
+    width: 220px;
+    height: auto;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.aboutme {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 40px;
+    width: 85%;
+    max-width: 1200px;
+    margin: 5rem auto 0;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: block;
+    margin: 2rem auto 0;
+    width: fit-content;
+    padding: 0.7rem 1.2rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 0.5rem;
+    font-weight: 500;
+    border: 2px solid silver;
+    transition: 0.8s ease;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    nav {
+        width: calc(100% - 2rem);
+        margin: 1rem auto;
+        padding: 0.6rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    .aboutme {
+        width: 90%;
+        box-sizing: border-box;
+        flex-direction: column;
+        padding: 20px;
+        margin: 3rem auto 0;
+        letter-spacing: 0.1rem;
+    }
+
+    .technician-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .technician-text {
+        width: 100%;
+    }
+
+    .technician-images {
+        width: 100%;
+        align-items: center;
+    }
+
+    .technician-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .welding-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .welding-text {
+        width: 100%;
+    }
+
+    .welding-img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+    }
+
+    .btn {
+        max-width: 90%;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    p {
+        text-indent: 20px;
+        text-align: left;
+    }
+}
