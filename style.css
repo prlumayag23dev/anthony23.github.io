@@ -21,10 +21,14 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 nav {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-end;
     border: 2px solid white;
     background-color: 0 0 0 rgba(0, 0, 0, 0.75);
@@ -63,7 +67,8 @@ nav a.active{
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-    width: 85%;
+    width: 90%;
+    height: auto;
     margin: 10rem auto 0 auto;
     text-align: justify;
 }
