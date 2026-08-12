@@ -4,6 +4,10 @@ html {
     color: white;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 img {
     width: 100%;
     border: solid white;
@@ -113,4 +117,20 @@ p {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+        margin-top: 3rem;
+    }
+
+    .home-content img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin: 20px auto 0;
+    }
 }
