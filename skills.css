@@ -55,7 +55,7 @@ nav a.active {
     border-radius: 10px;
     padding: 20px;
     margin: 3rem auto 0;
-    text-align: center;
+    text-align: start;
 }
 
 .skills img {
@@ -89,7 +89,6 @@ nav a.active {
     text-decoration: none;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
     nav {
