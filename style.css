@@ -102,7 +102,8 @@ p {
     align-items: center;
     justify-content: center;
     gap: 25px;
-    margin-left: 60px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .logo a, 
