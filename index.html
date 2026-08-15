@@ -6,6 +6,156 @@
     <title>Prince Anthony A. Lumayag</title>
     <link rel="stylesheet" href="style.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+    .telegram-button {
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+        }
+    .telegram-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.75);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 99999;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+        .telegram-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .telegram-popup {
+            position: relative;
+
+            width: 320px;
+            max-width: 90%;
+
+            padding: 35px 30px;
+
+            background: #111;
+
+            border: 2px solid white;
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.8);
+
+            transform: scale(0.7) translateY(30px);
+
+            transition:
+                transform 0.35s ease;
+        }
+
+
+        .telegram-overlay.show .telegram-popup {
+            transform: scale(1) translateY(0);
+        }
+
+        .popup-telegram-logo {
+            width: 80px;
+            height: 80px;
+
+            object-fit: contain;
+
+            margin-bottom: 10px;
+        }
+
+        .telegram-popup h2 {
+            color: white;
+
+            font-size: 25px;
+
+            margin: 5px 0 10px;
+        }
+
+         .telegram-popup p {
+            color: #ccc;
+
+            font-size: 15px;
+
+            margin: 0 0 12px;
+        }
+
+        .telegram-username {
+            color: #229ED9;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+         .telegram-message {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            background: #229ED9;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.2s ease;
+        }
+
+
+        .telegram-message:hover {
+            background: #168ac2;
+
+            transform: translateY(-3px);
+        }
+
+        .telegram-close {
+            position: absolute;
+
+            top: 8px;
+            right: 12px;
+
+            width: 35px;
+            height: 35px;
+
+            border: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        .telegram-close:hover {
+            color: #229ED9;
+
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 <body>
@@ -27,19 +177,74 @@
             <img src="img/anthony.jpg" alt="">
     </div>
     <br></br>
-    <div class="logo">
-            <a href="https://www.linkedin.com/in/prlumayag92/" target="_blank"> 
-                <img src="img/linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.upwork.com/freelancers/~0177c5f0ebd6ba40e0?viewMode=1" target="_blank">
-                <img src="img/upwork.png" alt="UpWork">
-            </a>
-            <a href="https://www.onlinejobs.ph/jobseekers/info/4475553" target="_blank">
-                <img src="img/olj.png" alt="OnlineJobsPh">
-            </a>
-        </div>
+    <div class="logo"> 
+        <a href="https://www.linkedin.com/in/prlumayag92/" target="_blank" rel="noopener noreferrer" > 
+            <img src="img/linkedin.png" alt="LinkedIn"> </a> 
+        <a href="https://www.upwork.com/freelancers/~0177c5f0ebd6ba40e0?viewMode=1" target="_blank" rel="noopener noreferrer" > 
+            <img src="img/upwork.png" alt="UpWork"> </a> 
+        <a href="https://www.onlinejobs.ph/jobseekers/info/4475553" target="_blank" rel="noopener noreferrer" > 
+            <img src="img/olj.png" alt="OnlineJobs.ph"> </a>
+        <button type="button" class="telegram-button" id="telegramButton" aria-label="Open Telegram contact" > 
+            <img src="img/tg.png" alt="Telegram"> </button> 
+    </div>
     <br></br>
-    <a href="hireme.html"class="btn">Hire Me</a>
-    
+        <a href="hireme.html"class="btn">Hire Me</a>
+    <div class="telegram-overlay" id="telegramOverlay">
+        <div class="telegram-popup">
+            <button type="button" class="telegram-close" id="telegramClose">
+                &times;
+            </button>
+            <img src="img/tg.png" alt="Telegram" class="popup-telegram-logo">
+            <h2>Let's Connect</h2>
+            <p>Message me on Telegram</p>
+            <div class="telegram-username">
+            @lyannathea94
+        </div>
+        <a href="https://t.me/lyannathea94" target="_blank" rel="noopener noreferrer" class="telegram-message">Message on Telegram</a>
+        </div>
+    </div>
+    <script>
+    const telegramButton =
+        document.getElementById("telegramButton");
+
+    const telegramOverlay =
+        document.getElementById("telegramOverlay");
+
+    const telegramClose =
+        document.getElementById("telegramClose");
+
+    telegramButton.addEventListener("click", function () {
+
+        telegramOverlay.classList.add("show");
+
+    });
+
+    telegramClose.addEventListener("click", function () {
+
+        telegramOverlay.classList.remove("show");
+
+    });
+
+    telegramOverlay.addEventListener("click", function (event) {
+
+        if (event.target === telegramOverlay) {
+
+            telegramOverlay.classList.remove("show");
+
+        }
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            telegramOverlay.classList.remove("show");
+
+        }
+
+    });
+
+</script>
 </body>
 </html>
